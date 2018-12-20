@@ -5,6 +5,12 @@ If you have a lot of keys in JSON file, it can cause a mistake
 this lint tool will catch these errors
 
 
+It searches all directories and files in the src directory to detect ts and tsx files and perform AST analysis.
+
+
+Compares the argument value of the translation function t () extracted from AST with the key value of JSON files.
+
+
 ### Installation
 ```bash
 npm install cogi
