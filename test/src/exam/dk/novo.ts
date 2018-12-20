@@ -1,0 +1,2 @@
+t('register')
+t('id')

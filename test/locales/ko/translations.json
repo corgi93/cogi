@@ -1,0 +1,10 @@
+{
+    "id": "관리자 아이디",
+    "password": "관리자 비밀번호",
+    "Product Name": "상품 이름",
+    "Product Price": "상품 가격",
+    "manufacturer": "제조사",
+    "discount": "할인",
+    "date": "날짜",
+    "email": "제품"
+}

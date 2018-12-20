@@ -1,0 +1,16 @@
+{
+    "rules": {
+        "no-console": false,
+        "semicolon": [true, "never"],
+        "prettier": true,
+        "max-classes-per-file": false
+    },
+    "extends": [
+        "tslint:recommended",
+        "tslint-config-prettier",
+        "tslint-plugin-prettier"
+    ],
+    "linterOptions": {
+        "exclude": ["scripts/**/*.js", "node_modules/**/*.ts"]
+    }
+}

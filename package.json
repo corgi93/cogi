@@ -1,0 +1,79 @@
+{
+    "name": "cogi",
+    "version": "1.0.0",
+    "description": "Typescript Project",
+    "main": "src/index.ts",
+    "license": "MIT",
+    "scripts": {
+        "start": "ts-node %NODE_DEBUG_OPTION% src/cli.ts",
+        "build": "tsc",
+        "e2e": "node scripts/e2e-test.js",
+        "lint": "tslint src/**/*.ts",
+        "test": "jest --colors --watchAll",
+        "test:ci": "cross-env CI=true jest --colors",
+        "format": "prettier --write \"src/**/*\"",
+        "conflict-rules": "tslint-config-prettier-check ./tslint.json"
+    },
+    "bin": {
+        "cogi": "bin/cogi"
+    },
+    "jest": {
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "<rootDir>/tsconfig.json"
+            }
+        },
+        "collectCoverageFrom": ["src/**/*.{js,jsx,ts,tsx}"],
+        "moduleDirectories": ["<rootDir>/src", "node_modules"],
+        "preset": "ts-jest"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js,jsx}": ["prettier --write", "tslint --fix", "git add"],
+        "*.{json,css}": ["prettier --write", "git add"]
+    },
+    "prettier": {
+        "parser": "typescript",
+        "semi": false,
+        "singleQuote": true,
+        "overrides": [
+            {
+                "files": "*.json",
+                "options": {
+                    "parser": "json"
+                }
+            }
+        ]
+    },
+    "devDependencies": {
+        "@types/chalk": "^2.2.0",
+        "@types/cross-spawn": "^6.0.0",
+        "@types/jest": "^23.3.9",
+        "@types/node": "^10.12.5",
+        "cross-env": "^5.2.0",
+        "expect.js": "^0.3.1",
+        "husky": "^1.1.3",
+        "jest": "^23.6.0",
+        "lint-staged": "^8.0    .4",
+        "npm-run-all": "^4.1.3",
+        "prettier": "^1.15.1",
+        "react": "^16.6.3",
+        "sinon": "^7.1.1",
+        "ts-jest": "^23.10.4",
+        "ts-node": "^7.0.1",
+        "tslint": "^5.11.0",
+        "tslint-config-prettier": "^1.15.0",
+        "tslint-plugin-prettier": "^2.0.1",
+        "typescript": "^3.1.6"
+    },
+    "dependencies": {
+        "chalk": "^2.4.1",
+        "commander": "^2.19.0",
+        "cross-spawn": "^6.0.5",
+        "i18n-react": "^0.6.4"
+    }
+}
