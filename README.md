@@ -22,3 +22,14 @@ import { getInfo, IInfo } from './ast'
 import { getFiles, readData } from './files'
 import { getTransInfoFromPath, ITranslation } from './translate'
 ```
+
+### CLI
+```bash
+Usage: cogi [options]
+
+this is ts-lint tool for detect mistake in i18n
+
+Options:
+  -V, --version  output the version number
+  -h, --help     output usage information
+```
