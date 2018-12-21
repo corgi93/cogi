@@ -1,6 +1,6 @@
 {
     "name": "cogi",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Typescript Project",
     "main": "src/index.ts",
     "license": "MIT",
@@ -12,8 +12,7 @@
         "test": "jest --colors --watchAll",
         "test:ci": "cross-env CI=true jest --colors",
         "format": "prettier --write \"src/**/*\"",
-        "conflict-rules": "tslint-config-prettier-check ./tslint.json",
-        "prepublish": "npm run build && npm run test && npm run lint"
+        "conflict-rules": "tslint-config-prettier-check ./tslint.json"
     },
     "bin": {
         "cogi": "bin/cogi"
@@ -76,5 +75,9 @@
         "commander": "^2.19.0",
         "cross-spawn": "^6.0.5",
         "i18n-react": "^0.6.4"
+    },
+        "repository": {
+        "type": "git",
+        "url": "https://github.com/shiningjean1276/awesome-matrix.git"
     }
 }

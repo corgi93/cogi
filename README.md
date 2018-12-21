@@ -17,10 +17,42 @@ npm install cogi
 ```
 
 ### Usage
-```bash
-cd test
-cogi
+```typescript
+// We plan to update, The translation function name must be fixed and used as t()
+
+// example
+funtion t(key: string){
+  return key
+}
+
+t('ko-item1')
+t('ko-item2')
+t('en-item1')
+t('en-item2')
+
 ```
+
+### Directory Structure
+```typescript
+//  You need to keep these directory structures.
+project
+---locales
+------en
+---------translation.json
+------ko
+---------translation.json
+---src
+------exam
+---------main.ts
+---------router.ts
+------build
+---------main.js
+---------router.js
+------index.ts
+------exam.tsx
+
+```
+In the src directory, when you create a directory or create a file, only the ts and tsx files are found and the argument values ​​of t () are verified.
 
 - provided API
 ```typescript
@@ -38,4 +70,9 @@ this is ts-lint tool for detect mistake in i18n
 Options:
   -V, --version  output the version number
   -h, --help     output usage information
+```
+
+### Limitations
+```typescript
+// We plan to update, The translation function name must be fixed and used as t()
 ```

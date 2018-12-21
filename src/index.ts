@@ -29,35 +29,29 @@ export function getErrorsFrom(
     infos: IInfo[],
     translations: ITranslation[]
 ): string[] {
-    const validationArray: string[] = []
-    const set = new Set()
+    const validation: string[] = []
 
     for (const info of infos) {
         for (const translation of translations) {
             let hasKey: boolean = false
             for (const key of translation.keys) {
-                if (info.key === key) {
+                if (key === info.key) {
                     hasKey = true
                 }
             }
-            set.add(hasKey)
 
-            if (set.has(false)) {
-                const relativeFilePath = path.relative(
-                    process.cwd(),
-                    info.filename
-                )
-                const relativeJSONPath = path.relative(
-                    process.cwd(),
-                    translation.translationFile.path
-                )
-                validationArray.push(
-                    `'${relativeFilePath}' : can't find '${
-                        info.key
-                    }' from '${relativeJSONPath}'`
-                )
+            if (!hasKey) {
+                const filename = info.filename
+                const transPath = translation.translationFile.path
+                const relativeFile = path.relative(process.cwd(), filename)
+                const relativeJSON = path.relative(process.cwd(), transPath)
+                const errorMessage = `'${relativeFile}' : can't find '${
+                    info.key
+                }' from '${relativeJSON}'`
+
+                validation.push(errorMessage)
             }
         }
     }
-    return validationArray
+    return validation
 }

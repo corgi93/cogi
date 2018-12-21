@@ -1,2 +1,2 @@
-t('register')
 t('id')
+t('Product Price')
